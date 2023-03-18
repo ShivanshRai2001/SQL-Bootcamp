@@ -73,7 +73,7 @@ SELECT DEPARTMENT, SUM(SALARY) FROM Worker GROUP BY DEPARTMENT;
 -- GROUP BY using HAVING it will work as a condition
 SELECT DEPARTMENT, COUNT(DEPARTMENT) FROM Worker GROUP BY DEPARTMENT HAVING COUNT(DEPARTMENT) > 2;
 
--- This is to create another table of bonus provided with FOREGIN KEY
+-- This is to create another table of bonus provided with FOREIGN KEY
 CREATE TABLE Bonus (
     WORKER_REF_ID INT,
     BONUS_AMOUNT INT(10),
