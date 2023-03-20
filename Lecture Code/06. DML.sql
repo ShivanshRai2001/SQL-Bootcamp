@@ -39,6 +39,18 @@ DELETE FROM Customer WHERE id = 121;
 -- Delete table
 DELETE FROM Customer;
 
+-- Replace
+REPLACE INTO Customer(ID, CITY)
+    VALUES(1251, 'Colony'); -- here previous id will be updated
+REPLACE INTO Customer(ID, CUST_NAME, CITY)
+    VALUES(1333, 'Rohit', 'Colony');-- Here new id will be created
+-- Another way
+REPLACE INTO Customer SET ID = 1300, CUST_NAME = 'Mac', CITY = 'Utah';
+-- One more way
+REPLACE INTO Customer(CUST_NAME, CITY)
+    SELECT CUST_NAME, CITY 
+    FROM Customer WHERE ID = 500;
+
 CREATE TABLE Order_Details (
     ORDER_ID integer PRIMARY KEY,
     DELIVERY_DATE DATE,
