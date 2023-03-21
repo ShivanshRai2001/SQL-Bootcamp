@@ -28,7 +28,7 @@ CREATE TABLE Order_Details (
     ORDER_ID integer PRIMARY KEY,
     DELIVERY_DATE DATE,
     CUST_ID INT,
-    FOREIGN KEY(CUST_ID) REFERENCE Customer(id) -- Foreign key is defined over here
+    FOREIGN KEY(CUST_ID) REFERENCES Customer(id) -- Foreign key is defined over here
 );
 
 INSERT INTO Order_Details
