@@ -63,3 +63,21 @@ INNER JOIN PROJECT as p ON e.E_ID = p.EMP_ID;
 
 -- Fetch out all the employee ID's and their contact detail who have been working
 -- from jaipur with the clients name working in hydrabad
+SELECT e.E_ID, e.EMAIL_ID, e.PHONE_NO, c.FIRST_NAME, c.LAST_NAME FROM EMPLOYEE as e
+INNER JOIN CLIENT as c ON e.E_ID = c.EMP_ID WHERE e.CITY = 'Jaipur' AND c.CITY = 'Hyderabad';
+
+-- LEFT JOIN
+-- Fetch out each project allocated to each employss.
+SELECT * FROM EMPLOYEE as e
+LEFT JOIN PROJECT as p ON e.E_ID = p.EMP_ID;
+
+-- RIGHT JOIN
+-- List out all the projects along with the employee's name and their respective allocated email ID
+SELECT p.ID, p.EMP_NAME, e.F_NAME, e.L_NAME, e.EMAIL_ID FROM EMPLOYEE as e
+RIGHT JOIN PROJECT as p
+ON e.E_ID = p.EMP_ID;
+
+-- CROSS JOIN
+-- List out all the combinations possible for the employss's name and projects that can exist.
+SELECT e.F_NAME, e.L_NAME, p.ID, p.EMP_NAME FROM EMPLOYEE as e
+CROSS JOIN PROJECT as p;
