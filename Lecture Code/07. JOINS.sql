@@ -81,3 +81,7 @@ ON e.E_ID = p.EMP_ID;
 -- List out all the combinations possible for the employss's name and projects that can exist.
 SELECT e.F_NAME, e.L_NAME, p.ID, p.EMP_NAME FROM EMPLOYEE as e
 CROSS JOIN PROJECT as p;
+
+-- We can join without using join keyword
+SELECT e.E_ID, e.F_NAME, e.L_NAME, p.ID, p.EMP_NAME FROM EMPLOYEE as e,
+PROJECT as p WHERE e.E_ID = p.EMP_ID;
