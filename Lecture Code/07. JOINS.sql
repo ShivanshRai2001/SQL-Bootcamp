@@ -49,7 +49,7 @@ CREATE TABLE CLIENT (
 );
 
 INSERT INTO CLIENT
-    (ID, FIRST_NAME, LAST_NAME, AGE, EMAIL_ID, PHONE_NO, CITY, EMP_ID) VALUES
+    (C_ID, FIRST_NAME, LAST_NAME, AGE, EMAIL_ID, PHONE_NO, CITY, EMP_ID) VALUES
     (1, 'Mac', 'Rogers', 47, 'mac@gmail.com', 333, 'Kolkata', 3),
     (2, 'Max', 'Poirier', 27, 'max@gmail.com', 222, 'Kolkata', 3),
     (3, 'Peter', 'Jain', 24, 'peter@gmail.com', 111, 'Delhi', 1),
