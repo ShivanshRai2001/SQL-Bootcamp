@@ -9,4 +9,4 @@ CREATE TABLE student (
 
 INSERT INTO student VALUES(1, 'Ankit');
 
-SELECT * FROM student;
+SELECT * FROM student; -- See the entire table
