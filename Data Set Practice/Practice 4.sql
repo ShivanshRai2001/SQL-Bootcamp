@@ -100,18 +100,41 @@ FROM EMPLOYEE_INFO GROUP BY department
 ORDER BY EMP_DEPT_COUNT ASC;
 
 -- Q18. Write a query to calculate the even and odd records from a table.
+-- Even
+SELECT * FROM EMPLOYEE_INFO
+WHERE (emp_id % 2) == 0;
+-- Odd
+SELECT * FROM EMPLOYEE_INFO
+WHERE (emp_id % 2) != 0;
 
+-- Q19. Write a SQL query to retrieve employee details from EmployeeInfo table who have a date of joining in the EmployeePosition table.
+SELECT * FROM EMPLOYEE_INFO AS E
+WHERE EXISTS (SELECT * FROM EMPLOYEE_POSITION AS P WHERE E.emp_id = P.EMP_ID);
 
+-- Q20. Write a query to retrieve two minimum and maximum salaries from the EmployeePosition table.
+-- Minimum
+SELECT DISTINCT salary FROM EMPLOYEE_POSITION AS E1
+WHERE 2 >= (SELECT COUNT(DISTINCT salary) FROM EMPLOYEE_POSITION AS E2
+            WHERE E1.salary >= E2.salary) ORDER BY E1.salary DESC;
 
+SELECT salary FROM EMPLOYEE_POSITION 
+ORDER By salary ASC
+LIMIT 2;
 
+-- Maximum
+SELECT DISTINCT salary FROM EMPLOYEE_POSITION AS E1
+WHERE 2 >= (SELECT COUNT(DISTINCT salary) FROM EMPLOYEE_POSITION AS E2
+            WHERE E1.salary <= E2.salary) ORDER BY E1.salary DESC;
 
+SELECT salary FROM EMPLOYEE_POSITION 
+ORDER By salary DESC
+LIMIT 2;
 
-
-
-
-
-
-
+-- Q21. Write a query to find the Nth highest salary from the table without using TOP/limit keyword.
+SELECT salary FROM EMPLOYEE_POSITION AS E1
+WHERE 5-1 = (SELECT COUNT(DISTINCT(E2.salary))
+             FROM EMPLOYEE_POSITION AS E2
+             WHERE E2.salary > E1.salary);
 
 
 
